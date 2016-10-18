@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<project name="P2P_File_Sharing_System" default="compile" basedir=".">
+<echo>===============================================================================</echo>
+<echo>|                 Karthik K : P2P File Sharing System:                        |</echo>
+<echo>|          --------------------------------------------------                 |</echo>
+<echo>|             [==========PEER_1 : BUILD SCRIPT:==========]                    |</echo>
+<echo>|-----------------------------------------------------------------------------|</echo>
+<echo>===============================================================================</echo>
+<!-- set global properties for this build -->
+<property name="Peer_1" location="Peer_1"/>
+
+<target name="init">
+<!-- Create the time stamp -->
+<tstamp/>
+</target>
+
+<target name="clean">
+<delete>
+	<fileset dir="${basedir}" includes="**/*.class"/>
+</delete>
+</target>
+
+<target name="compile" depends="clean">
+	<javac includeantruntime="true" srcdir="${basedir}" destdir="${basedir}" includes="**/*.java"/> 
+<echo> </echo>
+<echo> End Of Build Script !!! </echo>
+<echo> ========================================================================================================================================================================================= </echo>
+</target>
+</project>
+<!--
+<target name="run_server" depends="compile">
+	<java fork="true" failonerror="yes" classname="CentralIndxServer" classpath="${CentralIndxServer}"/>
+</target>	
+-->
+<!--
+<target name="create" depends="clean">
+	<mkdir dir="${source}" />
+	<mkdir dir="${bin}" />
+</target>
+
+<target name="copy" depends="create">
+	<copydir dest="${source}" src="/Users/karthikk/Desktop/Java_pgms/Client_Server_Prgm/File_IO_over_Socket/Working_File_transfer_Module_with_Ant" excludes="**/ant/**">
+</copydir>
+</target>
+
+
+<target name="compile" depends="copy">
+	<javac includeantruntime="true" srcdir="${source}" destdir="${bin}" includes="**/*.java"> 
+</javac>
+</target>
+
+<include file="build_client.xml" as="build_client"/>
+-->
+<!--
+<ant antfile="build_workin.xml" target="run"/>
+-->
+<!--
+<antcall target="run_client"/>
+-->
+<!--
+<ant antfile="build_workin.xml"/>
+<echo> END OF ANT1 </echo>
+-->
+<!--
+<target name="run_server" depends="compile">
+	<java fork="true" failonerror="yes" classname="SimpleFileServer" classpath="bin"/>
+	<echo> After Server run</echo>
+</target>	
+-->
+
+<!--
+<target name="run_client" depends="run_server">
+	<java fork="true" failonerror="yes" classname="SimpleFileClient" classpath="bin"/>
+
+</target>
+-->
