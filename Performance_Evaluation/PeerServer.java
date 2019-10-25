@@ -278,8 +278,8 @@ public class PeerServer {
 			fw.close();
 
 		} catch(Exception e){
-			System.out.println("");
-			//	System.out.println("Cannot Open File");     // To Mask Print on Console
+			//System.out.println("");
+			System.out.println("Cannot Open File");     // To Mask Print on Console
 		}
 
 	}
